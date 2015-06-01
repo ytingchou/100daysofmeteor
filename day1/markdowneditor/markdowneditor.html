@@ -1,0 +1,23 @@
+<head>
+  <title>markdowneditor</title>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Live Markdown Editor</h1>  
+  </div>
+
+  {{> markdownEditor}}
+</body>
+
+<template name="markdownEditor">
+  <div class="row">
+    <div class="editor-container col-6">
+        <textarea name="" id="markdown-editor" cols="30" rows="10">{{defaultContent}}</textarea>   
+    </div>
+    <div class="preview-container col-6">
+        {{#markdown}}{{#if markdownContent}}{{markdownContent}}{{else}}{{defaultContent}}{{/if}}{{/markdown}}
+    </div>
+  </div>
+</template>
+
