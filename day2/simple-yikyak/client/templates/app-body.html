@@ -1,0 +1,14 @@
+<template name="appBody">
+  <header>
+    <div class="container nav">
+      <a href="{{pathFor route='home'}}" class="brand">Yak</a>
+      <a href="{{pathFor route='submit'}}" class="submit-btn pull-right">Send Yak</a>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      {{> yield}}
+    </div>
+  </div>
+</template>
