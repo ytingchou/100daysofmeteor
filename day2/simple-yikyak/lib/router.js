@@ -1,3 +1,9 @@
+// Global subscriptions
+if (Meteor.isClient) {
+  Meteor.subscribe('yaks');
+  Meteor.subscribe('comments');
+}
+
 Router.configure({
   layoutTemplate: 'appBody'
 });
