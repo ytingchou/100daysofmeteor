@@ -1,0 +1,40 @@
+<template name="askProblem">
+  <h1>ASK FIVE WHYS</h1>
+  <input id="txtProblem" type="text" placeholder="What's the problem" value="{{currentProblemTitle}}">
+  <input id="route" type="button" value="Find Its Route">
+</template>
+
+<template name="askWhy">
+  <p>Why # - {{currentStage}} ?</p>
+  <p>{{previousStageResult}}</p>
+  <input id="txtAnswer" type="text" placeholder="Because ..." value="{{currentAnswer}}">
+  <input id="btnAnswer" type="button" value="Answer #{{currentStage}}">
+
+  {{> backButton}}
+</template>
+
+<template name="askSolution">
+  {{#with currentProblem}}
+    <div class="problem">
+      <p>Problem - {{problem}}</p>
+    </div>
+
+    <div class="answers">
+      {{#each answers}}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+  {{/with}}
+
+  <form>
+  <input id="txtSolution" name="solution" type="text" placeholder="What could be the best solution?">
+  <input id="submitAnswer" type="submit" value="Answer">
+  </form>
+
+  {{> backButton}}
+
+</template>
+
+<template name="backButton">
+  <button id="btnBack" type="button">Back</button>
+</template>

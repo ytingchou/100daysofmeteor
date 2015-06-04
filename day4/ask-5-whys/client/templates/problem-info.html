@@ -1,0 +1,17 @@
+<template name="problemInfo">
+
+  <div class="problem">
+    <p>Problem - {{problem}}</p>
+  </div>
+
+  <div class="answers">
+    {{#each answers}}
+      <p>{{this}}</p>
+    {{/each}}
+  </div>
+
+  <div class="solution">
+    <p>Solution - {{solution}}</p>
+  </div>
+  <a href="{{pathFor route='problems'}}">All Problems</a>
+</template>

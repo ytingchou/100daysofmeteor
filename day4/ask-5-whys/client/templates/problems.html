@@ -1,0 +1,11 @@
+<template name="problems">
+
+  <h1>Problems</h1>
+
+  <a href="{{pathFor route='index'}}">Ask 5 why</a>
+
+  {{#each problems}}
+    <a href="{{pathFor route='problemInfo'}}">{{problem}}</a>
+  {{/each}}
+
+</template>
