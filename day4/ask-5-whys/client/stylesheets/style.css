@@ -5,10 +5,12 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #f3f3f3;
 }
 
 a {
   display: block;
+  text-align: center;
 }
 
 .container {
@@ -17,6 +19,77 @@ a {
   margin-right: auto;
 }
 
+.content {
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 2em;
+}
+
 form, input, button {
   display: block;
+}
+
+input, a.btn {
+  width: 100%;
+  min-height: 4.5em;
+  border: none;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+input[id*="txt-"] {
+  background: white;
+}
+
+input[id*="btn-"], #submit-answer {
+  background-color: red;
+  color: white;
+  box-shadow: inset 0 -10px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+input[id*="btn-"]:hover, #submit-answer:hover {
+  background-color: #BB0A0A;
+}
+
+header {
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+}
+
+h1, h3 {
+  font-weight: normal;
+}
+
+button {
+  margin: 2em auto;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.problem, .solution {
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid #929292;
+  font-size: 1.2em;
+  padding: 20px;
+  min-height: 4.5em;
+}
+
+.hidden {
+  visibility: hidden;;
+}
+
+.answers {
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid #929292;
+  font-size: 1.2em;
+  padding: 10px 20px;
+}
+
+a {
+  text-decoration: none;
 }

@@ -6,8 +6,8 @@ Template.askProblem.helpers({
 });
 
 Template.askProblem.events({
-  'click #route': function(event) {
-    var txtProblem = document.getElementById("txtProblem");
+  'click #btn-route': function(event) {
+    var txtProblem = document.getElementById("txt-problem");
     var problem = txtProblem.value;
 
     if (problem.length == 0) {
@@ -52,8 +52,8 @@ Template.askWhy.helpers({
 });
 
 Template.askWhy.events({
-  'click #btnAnswer': function(event) {
-    var txtAnswer = document.getElementById("txtAnswer");
+  'click #btn-answer': function(event) {
+    var txtAnswer = document.getElementById("txt-answer");
     var answer = txtAnswer.value;
 
     if (answer.length == 0) {
@@ -78,6 +78,17 @@ Template.askWhy.events({
 Template.askSolution.helpers({
   currentProblem: function() {
     return Session.get("currentProblem");
+  },
+  answerWithPrompt: function() {
+    var answers = this.answers;
+    var prompt = "Why # ";
+    var result = [];
+
+    for (var index = 1; index <= 5; index++) {
+      result.push(prompt + index + " - " + answers[index]);
+    }
+
+    return result;
   }
 });
 
@@ -95,7 +106,7 @@ Template.askSolution.events({
 });
 
 Template.backButton.events({
-  'click #btnBack': function(event) {
+  'click #btn-back': function(event) {
       Session.set("currentStage", this.currentStage-1);
   }
 });

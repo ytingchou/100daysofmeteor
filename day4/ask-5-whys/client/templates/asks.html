@@ -1,40 +1,65 @@
 <template name="askProblem">
-  <h1>ASK FIVE WHYS</h1>
-  <input id="txtProblem" type="text" placeholder="What's the problem" value="{{currentProblemTitle}}">
-  <input id="route" type="button" value="Find Its Route">
+  <header>
+      <h1>ASK FIVE WHYS</h1>
+  </header>
+
+  <div class="content">
+    <div class="problem hidden">
+    </div>
+    <input id="txt-problem" type="text" placeholder="What's the problem" value="{{currentProblemTitle}}">
+    <input id="btn-route" type="button" value="Find Its Route">
+  </div>
 </template>
 
 <template name="askWhy">
-  <p>Why # - {{currentStage}} ?</p>
-  <p>{{previousStageResult}}</p>
-  <input id="txtAnswer" type="text" placeholder="Because ..." value="{{currentAnswer}}">
-  <input id="btnAnswer" type="button" value="Answer #{{currentStage}}">
+  <header>
+      <h1>Why #{{currentStage}} ?</h1>
+  </header>
 
-  {{> backButton}}
+  <div class="content">
+    <div class="problem">
+      <p>{{previousStageResult}}</p>
+    </div>
+    <input id="txt-answer" type="text" placeholder="Because ..." value="{{currentAnswer}}">
+    <input id="btn-answer" type="button" value="Answer #{{currentStage}}">
+
+    {{> backButton}}
+  </div>
+
 </template>
 
 <template name="askSolution">
-  {{#with currentProblem}}
-    <div class="problem">
-      <p>Problem - {{problem}}</p>
-    </div>
+  <header class="hidden">
+    <h1>Solution</h1>
+  </header>
 
-    <div class="answers">
-      {{#each answers}}
-        <p>{{this}}</p>
-      {{/each}}
-    </div>
-  {{/with}}
+  <div class="content">
+    {{#with currentProblem}}
+      <div class="problem">
+        <p>Problem - {{problem}}</p>
+      </div>
 
-  <form>
-  <input id="txtSolution" name="solution" type="text" placeholder="What could be the best solution?">
-  <input id="submitAnswer" type="submit" value="Answer">
-  </form>
+      <div class="answers">
+        {{#each answerWithPrompt}}
+          <p>{{this}}</p>
+        {{/each}}
+      </div>
+    {{/with}}
 
-  {{> backButton}}
+    <form>
+      <input id="txt-solution" name="solution" type="text" placeholder="What could be the best solution?">
+      <input id="submit-answer" type="submit" value="Answer">
+    </form>
+
+    {{> backButton}}
+  </div>
 
 </template>
 
 <template name="backButton">
-  <button id="btnBack" type="button">Back</button>
+  <button id="btn-back" type="button">
+    <h1>
+      Back
+    </h1>
+  </button>
 </template>

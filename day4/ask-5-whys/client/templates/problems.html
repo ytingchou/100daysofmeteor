@@ -1,11 +1,18 @@
 <template name="problems">
+  <header>
+    <h1>Problems</h1>
+  </header>
 
-  <h1>Problems</h1>
+  <div class="content">
+    <a class="btn" href="{{pathFor route='index'}}">
+      <input id="btn-ask" type="button" value="Ask 5 why">
+    </a>
 
-  <a href="{{pathFor route='index'}}">Ask 5 why</a>
-
-  {{#each problems}}
-    <a href="{{pathFor route='problemInfo'}}">{{problem}}</a>
-  {{/each}}
+    {{#each problems}}
+      <div class="problem">
+        <a href="{{pathFor route='problemInfo'}}"><h3>{{problem}}</h3></a>
+      </div>
+    {{/each}}
+  </div>
 
 </template>
