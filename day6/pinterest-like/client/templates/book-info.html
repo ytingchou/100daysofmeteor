@@ -1,0 +1,20 @@
+<template name="bookInfo">
+  <div class="col-md-3 col-sm-6">
+    <div class="thumbnail">
+      <img src="{{coverImg}}">
+      <div class="caption">
+        {{#if currentUser}}
+          <div class="page-header">
+            <a id="like" href="#">Like</a>
+            <span class="label label-danger">{{likeCount}}</span>
+            {{#if likeThis}}
+              <span class="label label-default">You liked this</span>
+            {{/if}}
+          </div>
+        {{/if}}
+        <p>{{title}}</p>
+        <p>{{format}}</p>
+      </div>
+    </div>
+  </div>
+</template>

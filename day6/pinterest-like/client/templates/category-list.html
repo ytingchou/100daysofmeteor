@@ -1,0 +1,11 @@
+<template name="categoryList">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-inline text-center">
+        {{#each categories}}
+          <li><a href="/{{name}}" class="btn btn-default">{{name}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</template>

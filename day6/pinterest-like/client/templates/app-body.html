@@ -1,0 +1,11 @@
+<template name="appBody">
+  {{> yield "header"}}
+
+  <div class="container">
+    {{> yield "categories"}}
+
+    {{> yield}}
+  </div>
+
+  {{> yield "footer"}}
+</template>

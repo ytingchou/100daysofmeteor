@@ -1,0 +1,15 @@
+<template name="header">
+  <header class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="btn" href="{{pathFor route='index'}}">
+          <img src="book-icon.png" width="40px" height="40px">
+          <span>Books</span>
+        </a>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        {{> loginButtons}}
+      </div>
+    </div>
+  </header>
+</template>
